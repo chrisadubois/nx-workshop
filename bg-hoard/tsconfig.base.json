@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@bg-hoard/libs/store/ui-shared": [
+        "libs/libs/store/ui-shared/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,6 +1,29 @@
 {
   "version": 2,
   "projects": {
+    "libs-store-ui-shared": {
+      "root": "libs/libs/store/ui-shared",
+      "sourceRoot": "libs/libs/store/ui-shared/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/libs/store/ui-shared/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/libs/store/ui-shared"],
+          "options": {
+            "jestConfig": "libs/libs/store/ui-shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "store": {
       "root": "apps/store",
       "sourceRoot": "apps/store/src",

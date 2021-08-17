@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "libs-store-ui-shared": {
+      "tags": []
+    },
     "store": {
       "tags": []
     },
