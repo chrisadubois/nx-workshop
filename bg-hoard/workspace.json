@@ -1,29 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "libs-store-ui-shared": {
-      "root": "libs/libs/store/ui-shared",
-      "sourceRoot": "libs/libs/store/ui-shared/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/libs/store/ui-shared/**/*.{ts,tsx,js,jsx}"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/libs/store/ui-shared"],
-          "options": {
-            "jestConfig": "libs/libs/store/ui-shared/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "store": {
       "root": "apps/store",
       "sourceRoot": "apps/store/src",
@@ -119,6 +96,48 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/store-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "store-ui-shared": {
+      "root": "libs/store/ui-shared",
+      "sourceRoot": "libs/store/ui-shared/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/store/ui-shared/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/ui-shared"],
+          "options": {
+            "jestConfig": "libs/store/ui-shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "store-util-formatters": {
+      "root": "libs/store/util-formatters",
+      "sourceRoot": "libs/store/util-formatters/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/store/util-formatters/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/store/util-formatters"],
+          "options": {
+            "jestConfig": "libs/store/util-formatters/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
