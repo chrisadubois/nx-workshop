@@ -33,7 +33,7 @@
           }
         ]
       },
-      "enum": ["store", "api", "shared"]
+      "enum": ["api", "store", "shared"]
     }
   },
   "required": ["name", "directory"]
