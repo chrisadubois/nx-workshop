@@ -4,6 +4,7 @@
     "defaultBase": "master"
   },
   "implicitDependencies": {
+    ".github/workflows/ci.yml": "*",
     "package.json": {
       "dependencies": "*",
       "devDependencies": "*"
