@@ -15,20 +15,24 @@
     "directory": {
       "type": "string",
       "description": "Directory of the library",
-      "items": [
-        {
-          "value": "api",
-          "label": "api"
-        },
-        {
-          "value": "store",
-          "label": "store"
-        },
-        {
-          "value": "shared",
-          "label": "shared"
-        }
-      ]
+      "x-prompt": {
+        "message": "Directory of the library",
+        "type": "list",
+        "items": [
+          {
+            "value": "api",
+            "label": "api"
+          },
+          {
+            "value": "store",
+            "label": "store"
+          },
+          {
+            "value": "shared",
+            "label": "shared"
+          }
+        ]
+      }
     }
   },
   "required": ["name", "directory"]
