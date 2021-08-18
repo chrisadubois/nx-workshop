@@ -18,6 +18,7 @@ import { StoreFeatureGameDetail } from '@bg-hoard/store/feature-game-detail';
 import {Game} from '@bg-hoard/util-interface';
 import React from 'react';
 
+// the main store app
 export const App = () => {
   const [state, setState] = useState<{
     data: Game[];
