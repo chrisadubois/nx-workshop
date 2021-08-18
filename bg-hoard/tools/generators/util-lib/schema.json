@@ -11,7 +11,25 @@
         "$source": "argv",
         "index": 0
       }
+    },
+    "directory": {
+      "type": "string",
+      "description": "Directory of the library",
+      "items": [
+        {
+          "value": "api",
+          "label": "api"
+        },
+        {
+          "value": "store",
+          "label": "store"
+        },
+        {
+          "value": "shared",
+          "label": "shared"
+        }
+      ]
     }
   },
-  "required": ["name"]
+  "required": ["name", "directory"]
 }
