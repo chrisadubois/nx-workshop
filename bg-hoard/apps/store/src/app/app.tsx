@@ -49,9 +49,11 @@ export const App = () => {
       });
   }, []);
 
+  const title = 'Board Game Hoard';
+
   return (
     <>
-      <Header title="Board Game Hoard" />
+      <Header title={title} />
       <div className={styles.container}>
         <div className={styles['games-layout']}>
           {state.loadingState === 'loading'
