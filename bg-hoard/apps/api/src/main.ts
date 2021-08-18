@@ -5,6 +5,7 @@
 
 import * as express from 'express';
 import {getAllGames, getGame} from './app/games.repository'
+import {sendNotification} from '@bg-hoard/api/util-notifications';
 
 const app = express();
 

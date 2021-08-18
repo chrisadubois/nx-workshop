@@ -32,7 +32,8 @@
             "label": "shared"
           }
         ]
-      }
+      },
+      "enum": ["store", "api", "shared"]
     }
   },
   "required": ["name", "directory"]
