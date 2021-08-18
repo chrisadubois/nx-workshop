@@ -18,17 +18,33 @@ function getScopes(nxJson: any) {
 
 function replaceScopes(content: string, scopes: string[]): string {
   const joinScopes = scopes.map((s) => `'${s}'`).join(' | ');
-  const PATTERN = /interface Schema \{\n.*\n.*\n\}/gm;
+  const PATTERN = /interface Schema \{\n.*\n.*\n.*\n\}/gm;
   return content.replace(
     PATTERN,
     `interface Schema {
   name: string;
   directory: ${joinScopes};
+  tags: string;
 }`
   );
+};
+
+function addScopeIfMissing(host: Tree) {
+  updateJson(host, 'nx.json', (json) => {
+    Object.keys(json.projects).forEach((projectName) => {
+      if (
+        !json.projects[projectName].tags.some((tag) => tag.startsWith('scope:'))
+      ) {
+        const scope = projectName.split('-')[0];
+        json.projects[projectName].tags.push(`scope:${scope}`);
+      }
+    });
+    return json;
+  });
 }
 
 export default async function (tree: Tree, schema: any) {
+  addScopeIfMissing(tree);
   const scopes = getScopes(readJson(tree, 'nx.json'));
   updateJson(tree, 'tools/generators/util-lib/schema.json', (schemaJson) => {
     schemaJson.properties.directory['x-prompt'].items = scopes.map((scope) => ({

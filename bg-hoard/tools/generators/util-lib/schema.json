@@ -20,6 +20,10 @@
         "type": "list",
         "items": [
           {
+            "value": "admin",
+            "label": "admin"
+          },
+          {
             "value": "api",
             "label": "api"
           },
@@ -33,7 +37,7 @@
           }
         ]
       },
-      "enum": ["api", "store", "shared"]
+      "enum": ["admin", "api", "store", "shared"]
     }
   },
   "required": ["name", "directory"]

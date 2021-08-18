@@ -23,7 +23,9 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "postinstall": "husky install",
+    "pre-commit": "npm run nx workspace-generator update-scope-schema"
   },
   "private": true,
   "dependencies": {
