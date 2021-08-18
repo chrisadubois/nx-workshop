@@ -49,7 +49,7 @@ export const App = () => {
       });
   }, []);
 
-  const title = 'BoardGameHoard';
+  const title = 'Board Game Hoard';
 
   return (
     <>
